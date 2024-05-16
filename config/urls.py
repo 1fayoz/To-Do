@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home, CreateTask, EditTask
+from app.views import home, CreateTask, EditTask, TaskListAPIView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home ),
     path('create/', CreateTask),
-    path('edit_task/<int:pk>', EditTask, name='edit_task')
+    path('edit_task/<int:pk>', EditTask, name='edit_task'),
+    path('delete_model/<int:pk>', EditTask, name='delete_model'  ),
+    path('api/task-list/', TaskListAPIView.as_view())
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

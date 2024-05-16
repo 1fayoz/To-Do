@@ -29,6 +29,7 @@
             <li data-status="{{ tasks.status }}" data-id="{{ tasks.id }}">{{ tasks.title }}<a class="edit" href="{% url 'edit_task' tasks.id %}">Edit status</a> <a class="delete" href="#">Delete</a></li> 
             {% endfor %}
         </ul>
+        
     </div>
 
     <script>

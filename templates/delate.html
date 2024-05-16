@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="main_div">
+    <h1>Delete "{{ task.title }}" </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label style="padding-right: 50px;" for="status">
+            <p> Title: " {{task.title}} " </p>
+            <p> Description: " {{task.description}} " </p>
+            <p> Status: " {{task.status}} " </p>
+        </label>
+        
+        <input type="submit" value="Delete">
+    </form>
+    </div>
+</body>
+</html>
